@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass frontend/scss/styles.scss frontend/styles.css --watch"
+    "sass": "sass frontend/scss/:frontend --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.77.8"
+  },
+  "dependencies": {
+    "disqus-react": "^1.1.5"
   }
 }

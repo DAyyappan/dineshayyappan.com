@@ -4,3 +4,4 @@ node_modules
 misc_utils
 content
 static/images
+posts.json
