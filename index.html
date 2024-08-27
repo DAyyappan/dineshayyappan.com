@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <link rel="stylesheet" href="frontend/styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <img src="your-photo.jpg" alt="Your Name" class="profile-photo">
+                <div class="header-text">
+                    <h1>Your Name</h1>
+                    <p>Your Title</p>
+                    <p>Your Institution</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Email"><i class="icon-email"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="icon-github"></i></a>
+                        <a href="#" aria-label="Google Scholar"><i class="icon-scholar"></i></a>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="writing.html">Writing</a></li>
+                    <li><a href="media.html">Media</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <aside class="news-sidebar">
+                <h2>Recent News</h2>
+                <ul>
+                    <li><span class="date">05/2024:</span> News item 1</li>
+                    <li><span class="date">03/2024:</span> News item 2</li>
+                    <li><span class="date">01/2024:</span> News item 3</li>
+                    <!-- Add more news items as needed -->
+                </ul>
+            </aside>
+
+            <section id="about-me">
+                <h2>About Me</h2>
+                <p>Your introduction goes here. Describe your research interests, current position, and any other relevant information.</p>
+            </section>
+
+            <section id="featured-projects">
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <!-- Add your featured projects here -->
+                    <div class="project-card">
+                        <h3>Project 1</h3>
+                        <p>Short description of Project 1</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Project 2</h3>
+                        <p>Short description of Project 2</p>
+                    </div>
+                    <!-- Add more project cards as needed -->
+                </div>
+            </section>
+
+            <section id="interactive-cat">
+                <h2>Interactive Cat</h2>
+                <div id="cat-container">
+                    <!-- This will be populated by JavaScript -->
+                </div>
+                <div id="cat-chat">
+                    <input type="text" id="cat-question" placeholder="Ask the cat a question...">
+                    <button id="cat-submit">Ask</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
