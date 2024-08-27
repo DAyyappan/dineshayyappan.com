@@ -66,9 +66,10 @@
 
 // Single post page styles
 .single-post {
-    max-width: 800px;
+    max-width: 1024px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
 
     h1 {
         font-family: $font-family-serif;
@@ -86,6 +87,7 @@
     .post-content {
         font-size: 1.1em;
         line-height: 1.8;
+        text-align: left;
 
         img {
             max-width: 100%;

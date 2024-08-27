@@ -34,8 +34,16 @@ async function loadPost() {
         
         const content = document.createElement('div');
         content.className = 'post-content';
-        content.innerHTML = converter.makeHtml(post.content);
         
+        // Process content to fix image paths
+        let processedContent = post.content.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+            // Adjust the image path if necessary
+            const adjustedSrc = src.startsWith('http') ? src : `/static/images/${src.split('/').pop()}`;
+            return `![${alt}](${adjustedSrc})`;
+        });
+        
+        content.innerHTML = converter.makeHtml(processedContent);
+
         postElement.appendChild(title);
         postElement.appendChild(date);
         postElement.appendChild(content);
@@ -46,14 +54,32 @@ async function loadPost() {
         }
         
         postContent.appendChild(postElement);
-        
+
         // Adjust image sizes
         const images = postContent.getElementsByTagName('img');
         for (let img of images) {
             img.style.maxWidth = '100%';
             img.style.height = 'auto';
         }
-        
+
+        // Add Disqus
+        const disqusContainer = document.createElement('div');
+        disqusContainer.id = 'disqus_thread';
+        postElement.appendChild(disqusContainer);
+
+        // Disqus configuration
+        window.disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = postId;
+            this.page.title = post.title;
+        };
+
+        // Load Disqus script
+        const script = document.createElement('script');
+        script.src = 'https://dayyappan.disqus.com/embed.js';
+        script.setAttribute('data-timestamp', +new Date());
+        (document.head || document.body).appendChild(script);
+
     } catch (error) {
         console.error('Error loading post:', error);
         postContent.innerHTML = '<p>Error loading post</p>';

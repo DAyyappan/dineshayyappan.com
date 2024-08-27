@@ -288,9 +288,10 @@ nav ul li a {
 }
 
 .single-post {
-  max-width: 800px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 .single-post h1 {
   font-family: "Crimson Text", serif;
@@ -306,6 +307,7 @@ nav ul li a {
 .single-post .post-content {
   font-size: 1.1em;
   line-height: 1.8;
+  text-align: left;
 }
 .single-post .post-content img {
   max-width: 100%;
